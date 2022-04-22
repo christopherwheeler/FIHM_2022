@@ -88,7 +88,9 @@ a <- ggplot(df, aes(x = date_time, y = percent)) +
   geom_line(size = 1, color = "steelblue") + 
   theme_cowplot() + 
   xlab("datetime") + 
-  ylab("wet network prop")
+  ylab("wet proportion") +
+  theme(axis.title.x=element_blank())
+
 
 a
 
@@ -96,9 +98,27 @@ b <- ggplot(df, aes(x = date_time, y = storage_50cm)) +
   geom_line(size = 1, color = "steelblue") + 
   theme_cowplot() +
   xlab("datetime") + 
-  ylab("storage top 50 cm")
+  ylab("storage 50 cm") +
+  theme(axis.title.x=element_blank())
 
 b
 
 
 a/b
+
+c <- ggplot(df, aes(x = date_time, y =  precipitation)) +
+  geom_line(size = 1, color = "steelblue") + 
+  theme_cowplot() +
+  xlab("datetime") + 
+  ylab("precip")
+
+c
+
+# three panel fig
+a/b/c
+
+
+#================================================================================================
+#================================================================================================
+
+
